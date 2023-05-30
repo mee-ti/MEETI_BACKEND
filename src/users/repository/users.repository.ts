@@ -11,18 +11,7 @@ import { User } from '../users.schema';
 export class UsersRepository {
   constructor(
     @InjectModel(User.name) private readonly userModel: Model<User>,
-    // 해당 라인 추가, 참고로 강의에선 Comments 인데 저는 Cat과 같이 단수형으로 만들어서 Comment 입니다.
-    // @InjectModel(Comments.name) private readonly commentModel: Model<Comments>,
   ) { }
-
-  // async findAll() {
-  //   const result = await this.catModel
-  //     .find()
-  //     // populate 파라미터 변경
-  //     .populate({ path: 'comments', model: this.commentModel });
-
-  //   return result;
-  // }
 
   async userData(userId: string): Promise<UserInfo> {
     const user = await this.userModel.findById(userId).select('-password'); //select는 원하는 필드를 고를 수 있다 마이너스 하면 그것을 제외하고 email name 이런식으로 공백으로 구분
@@ -41,16 +30,8 @@ export class UsersRepository {
     else return false;
   }
 
-  // async findByIdAndUploadImg(id: any, fileName: string) {
-  //   const cat = await this.catModel.findById(id);
-
-  //   cat.imgUrl = `http://localhost:8000/media/${fileName}`;
-  //   console.log(cat);
-  //   return cat; //필요한 필드만 리턴
-  // }
-
   async findCatByIdWithoutPassword(userId: string | Types.ObjectId): Promise<User | null> {
-    const user = await this.userModel.findById(userId).select('-password') //select는 원하는 필드를 고를 수 있다 마이너스 하면 그것을 제외하고 email name 이런식으로 공백으로 구분
+    const user = await this.userModel.findById(userId).select('-password');
     return user;
   }
 

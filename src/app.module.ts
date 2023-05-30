@@ -7,15 +7,14 @@ import * as mongoose from 'mongoose';
 import { UsersModule } from './users/users.module';
 import { LoggerMiddleware } from './common/middlewares/logger.middleware';
 import { AuthModule } from './auth/auth.module';
+import { CalendarModule } from './calendar/calendar.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGODB_URI), // forRoot : 특정 설정을 모듈에 적용하고 해당 모듈을 여러 곳에서 재사용하는 경우
-    UsersModule, AuthModule,
+    UsersModule, AuthModule, CalendarModule,
   ],
-  controllers: [],
-  providers: [],
 })
 
 export class AppModule implements NestModule {
