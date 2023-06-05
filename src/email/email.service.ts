@@ -46,12 +46,12 @@ export class EmailService {
       }
       await this.transporter.sendMail(mailOptions);
 
-      res.cookie('authNum', authNum, { path: '/', expires: new Date(Date.now() + 3000000) });
+      res.cookie('authNum', authNum, { path: '/', expires: new Date(Date.now() + 30000000), sameSite: "none", secure: true });
 
-      return { result: true, authNum: authNum };
+      return { result: true };
     }
     catch (error) {
-      return { result: false, authNum: '' };
+      return { result: false };
     }
   }
 }

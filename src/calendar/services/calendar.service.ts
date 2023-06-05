@@ -18,7 +18,7 @@ export class CalendarService {
       end: end.substring(0, 10),
     });
 
-    return { result: true, message: "일정 삽입 성공" };
+    return { result: true, message: "일정 등록 성공" };
   }
 
   async getSchedule() {

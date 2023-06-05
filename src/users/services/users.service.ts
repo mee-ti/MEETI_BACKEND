@@ -46,9 +46,9 @@ export class UsersService {
     if (authNum === req.cookies.authNum) {
       res.cookie('authNum', authNum, { path: '/', expires: new Date(Date.now() + 3000000) });
 
-      const enterprise = "hamin@naver.com".split("@")[1].split(".")[0];
+      // const enterprise = "hamin@naver.com".split("@")[1].split(".")[0];
 
-      return { result: true, message: "인증 성공", enterprise: enterprise };
+      return { result: true, message: "인증 성공" };
     } else return { result: false, message: "잘못된 코드" };
   }
 

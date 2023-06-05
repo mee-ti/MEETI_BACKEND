@@ -36,7 +36,7 @@ export class UsersController {
     return await this.usersService.verifyEmail(email, res);
   }
 
-  @ApiOperation({ summary: '인증코드 요청', description: '인증코드 요청 API' })
+  @ApiOperation({ summary: '인증코드 조회', description: '인증코드 요청 API' })
   @Post('/email-authentication')
   async authenticationEmail(@Body('authNum') authNum: string, @Req() req: Request, @Res({ passthrough: true }) res: Response) {
 
