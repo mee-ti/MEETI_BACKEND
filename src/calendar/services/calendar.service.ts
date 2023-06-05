@@ -14,8 +14,8 @@ export class CalendarService {
     await this.calendarRepository.setSchedule({
       title,
       color,
-      start: start.substring(0, 10),
-      end: end.substring(0, 10),
+      start: start.substring(0, 8) + String(Number(start.substring(8, 10)) + 1),
+      end: end.substring(0, 8) + String(Number(end.substring(8, 10)) + 1),
     });
 
     return { result: true, message: "일정 등록 성공" };

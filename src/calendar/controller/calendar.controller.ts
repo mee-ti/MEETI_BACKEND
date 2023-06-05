@@ -10,6 +10,7 @@ export class CalendarController {
 
   @Post('/set-schedule')
   async setSchedule(@Body() scheduleDto: ScheduleDto) {
+    console.log(scheduleDto);
 
     return await this.calendarService.setSchedule(scheduleDto);
   }
