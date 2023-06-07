@@ -1,0 +1,21 @@
+import { IsString } from 'class-validator';
+
+export class FindReservationDto {
+  @IsString()
+  readonly telNum: string;
+
+  @IsString()
+  readonly pay: string;
+
+  @IsString()
+  readonly placeName: string;
+
+  @IsString()
+  readonly decrition: string;
+
+  @IsString()
+  readonly areaName: string;
+
+  @IsString()
+  readonly detailAdress: string;
+}

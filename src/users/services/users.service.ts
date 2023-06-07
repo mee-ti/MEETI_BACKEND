@@ -1,7 +1,6 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import * as path from 'path';
-import * as uuid from 'uuid';
 import * as AWS from 'aws-sdk';
 
 import { CreateUserDto } from '../dto/create-user.dto';
