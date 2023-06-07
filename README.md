@@ -1,4 +1,4 @@
-# 공유 오피스 - MEETI (졸업작품)
+# 공유 오피스 - MEETI
 
 - 프로젝트 인원 : 4명
 - 프로젝트 기간 : 23.03 ~ 23.11 
@@ -22,8 +22,8 @@
 <div>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/>
-  <br/>
 </div>
+<br/>
   
 ### 프레임워크 & 플랫폼 <br/>
 <div>
