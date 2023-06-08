@@ -24,10 +24,30 @@ export class ReservationRepository {
 
   async findAll() {
     try {
-      const reservation = await this.reservationModel.find();
-      return { reservation, message: "회의실 목록 조회 성공" };
+      const office = await this.reservationModel.find();
+      return { office, message: "회의실 목록 조회 성공" };
     } catch (error) {
-      throw new BadRequestException(`File upload failed : ${error}`);
+      throw new BadRequestException(`Find all office failed : ${error}`);
+    }
+  }
+
+  async search(search: string) {
+    try {
+      const regex = (pattern) => new RegExp(`.*${pattern}.*`);
+      const nameRegex = regex(search);
+      const office = await this.reservationModel.find({ placeName: { $regex: nameRegex } });
+      return { result: true, message: '회의실 검색 성공', office };
+    } catch (error) {
+      throw new BadRequestException(`Office serch failed : ${error}`);
+    }
+  }
+
+  async classification(area: string) {
+    try {
+      const office = await this.reservationModel.find({ areaName: area });
+      return { result: true, message: '지역 분류 성공', office };
+    } catch (error) {
+      throw new BadRequestException(`Office classification failed : ${error}`);
     }
   }
 }

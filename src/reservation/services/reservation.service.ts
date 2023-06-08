@@ -54,4 +54,12 @@ export class ReservationService {
 
     return result;
   }
+
+  async search(search: string) {
+    return await this.reservationRepository.search(search);;
+  }
+
+  async classification(area: string) {
+    return await this.reservationRepository.classification(area);;
+  }
 }
