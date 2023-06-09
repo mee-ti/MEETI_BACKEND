@@ -1,3 +1,4 @@
+import { ReservationDto } from './../dto/reservation.dto.';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -59,6 +60,35 @@ export class ReservationRepository {
       return { result: true, message: '지역 분류 성공', office };
     } catch (error) {
       throw new BadRequestException(`Office classification failed : ${error}`);
+    }
+  }
+
+  async detail(id: string) {
+    try {
+      const office = await this.reservationModel.findById(id);
+      return { result: true, message: '회의실 상세 조회 성공', office };
+    } catch (error) {
+      throw new BadRequestException(`Office detail find failed : ${error}`);
+    }
+  }
+
+  async reservation(reservationDto: ReservationDto) {
+    const { id, date } = reservationDto;
+    try {
+      await this.reservationModel.updateOne({ _id: id }, { $set: { status: "예약 완료" } });
+      await this.reservationModel.updateOne({ _id: id }, { $set: { date: date } });
+      return { result: true, message: '회의실 예약 성공!' };
+    } catch (error) {
+      throw new BadRequestException(`Office reservation failed : ${error}`);
+    }
+  }
+
+  async checkReservation() {
+    try {
+      const office = await this.reservationModel.find({ status: '예약 완료' });
+      return { office, message: "일정 조회 성공" };
+    } catch (error) {
+      throw new BadRequestException(`Find reservation failed : ${error}`);
     }
   }
 }

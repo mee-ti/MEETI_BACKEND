@@ -62,6 +62,11 @@ export class Reservation extends Document {
   })
   @IsString()
   imgUrl: string;
+
+  @Prop({
+    default: ""
+  })
+  date: string;
 }
 
 export const reservationSchema = SchemaFactory.createForClass(Reservation);

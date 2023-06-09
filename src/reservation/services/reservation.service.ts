@@ -5,6 +5,7 @@ import * as path from 'path';
 // import { FindReservationDto } from '../dto/find-reservation.dto';
 import { ReservationRepository } from '../repository/reservation.repository';
 import { CreateReservationDto } from './../dto/create-reservation.dto';
+import { ReservationDto } from '../dto/reservation.dto.';
 
 
 @Injectable()
@@ -67,5 +68,21 @@ export class ReservationService {
 
   async classification(area: string) {
     return await this.reservationRepository.classification(area);;
+  }
+
+  async detail(id: string) {
+    return await this.reservationRepository.detail(id);
+  }
+
+  async reservation(reservationDto: ReservationDto) {
+    const { id, date } = reservationDto;
+    return await this.reservationRepository.reservation({
+      id,
+      date: date.substring(0, 4) + '년 ' + date.substring(5, 7) + '월 ' + date.substring(8, 10) + '일'
+    });
+  }
+
+  async checkReservation() {
+    return await this.reservationRepository.checkReservation();
   }
 }
