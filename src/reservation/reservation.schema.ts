@@ -16,10 +16,10 @@ export class Reservation extends Document {
   status: string;
 
   @Prop({
-    required: true,
+    // required: true,
   })
   @IsNotEmpty()
-  @IsString()
+  // @IsString()
   telNum: string;
 
   @Prop({

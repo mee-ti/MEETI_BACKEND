@@ -3,6 +3,7 @@ import { CreateReservationDto } from '../dto/create-reservation.dto';
 import { ReservationService } from '../services/reservation.service';
 import { FindReservationDto } from '../dto/find-reservation.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { TestDto } from '../dto/test';
 
 @Controller('reservation')
 export class ReservationController {
@@ -14,6 +15,11 @@ export class ReservationController {
   @UseInterceptors(FileInterceptor('image'))
   async create(@UploadedFile() file: Express.Multer.File, @Body() reservationDto: CreateReservationDto) {
     return await this.reservationService.create('reservation', file, reservationDto);
+  }
+
+  @Post('/set')
+  async create2(@Body() reservationDto: TestDto) {
+    return await this.reservationService.create2(reservationDto);
   }
 
   @Get('/get-office')

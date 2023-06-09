@@ -12,9 +12,20 @@ export class ReservationRepository {
   ) { }
 
   async create(imgUrl: string, reservationDto: CreateReservationDto) {
-    const { telNum, pay, placeName, decrition, areaName, detailAdress } = reservationDto
+    const { telNum, pay, placeName, decrition, areaName, detailAdress } = reservationDto;
     try {
       await this.reservationModel.create({ telNum, pay, placeName, decrition, areaName, detailAdress, imgUrl });
+
+      return { result: true, message: "회의실 등록 성공" };
+    } catch (error) {
+      throw new BadRequestException(`File upload failed : ${error}`);
+    }
+  }
+
+
+  async create2(reservationDto: CreateReservationDto) {
+    try {
+      await this.reservationModel.create(reservationDto);
 
       return { result: true, message: "회의실 등록 성공" };
     } catch (error) {

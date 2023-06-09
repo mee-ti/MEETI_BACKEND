@@ -49,6 +49,12 @@ export class ReservationService {
     }
   }
 
+  async create2(reservationDto: CreateReservationDto) {
+    const result = await this.reservationRepository.create2(reservationDto);
+
+    return result;
+  }
+
   async findAll() {
     const result = await this.reservationRepository.findAll();
 
