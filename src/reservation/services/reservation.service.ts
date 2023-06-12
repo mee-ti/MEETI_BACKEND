@@ -78,7 +78,7 @@ export class ReservationService {
     const { id, date } = reservationDto;
     return await this.reservationRepository.reservation({
       id,
-      date: date.substring(0, 4) + '년 ' + date.substring(5, 7) + '월 ' + date.substring(8, 10) + '일'
+      date: date.substring(0, 4) + '년 ' + date.substring(5, 7) + '월 ' + (Number(date.substring(8, 10)) + 1) + '일'
     });
   }
 
