@@ -4,12 +4,12 @@ import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { Document, SchemaOptions } from 'mongoose';
 
 const options: SchemaOptions = {
-  timestamps: true, // DB에서 하나가 만들어지면 타임스탬프가 찍힌다.
+  timestamps: true,
   versionKey: false,
 }
 
-@Schema(options) //스키마 정의
-export class Calendar extends Document {  // 몽구스 도큐먼트를 상속받음
+@Schema(options)
+export class Calendar extends Document {
   @Prop({
     required: true,
   })
