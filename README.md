@@ -50,6 +50,7 @@
 
 # 시스템 구성도
 
-![스크린샷 2023-06-13 오전 10 23 53](https://github.com/mintmin0320/mintmin0320/assets/114549939/9251fdbe-28fa-4506-a13d-0f66857c2497)
+![스크린샷 2023-06-13 오전 10 28 14](https://github.com/mee-ti/MEETI_BACKEND/assets/114549939/37cb4254-ff28-4419-9c00-8993b089f55d)
+
 
 
