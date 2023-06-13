@@ -46,5 +46,10 @@
   <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=Gmail&logoColor=white"/>
 </div>
 <br/>
+<br/>
+
+# 시스템 구성도
+
+![스크린샷 2023-06-13 오전 10 23 53](https://github.com/mintmin0320/mintmin0320/assets/114549939/9251fdbe-28fa-4506-a13d-0f66857c2497)
 
 
