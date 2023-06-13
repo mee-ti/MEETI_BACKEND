@@ -39,11 +39,10 @@
 </div>
 <br/>
 
-### 프로젝트 배포 & 툴 & 서비스 <br/>
+### 프로젝트 배포 & 툴 <br/>
 <div>
   <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=Heroku&logoColor=white"/>
   <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=Gmail&logoColor=white"/>
 </div>
 <br/>
 <br/>
