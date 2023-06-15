@@ -39,12 +39,17 @@
 </div>
 <br/>
 
-### 프로젝트 배포 & 툴 & 서비스 <br/>
+### 프로젝트 배포 & 툴 <br/>
 <div>
   <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=Heroku&logoColor=white"/>
   <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=Gmail&logoColor=white"/>
 </div>
 <br/>
+<br/>
+
+# 시스템 구성도
+
+![스크린샷 2023-06-13 오전 10 28 14](https://github.com/mee-ti/MEETI_BACKEND/assets/114549939/37cb4254-ff28-4419-9c00-8993b089f55d)
+
 
 
